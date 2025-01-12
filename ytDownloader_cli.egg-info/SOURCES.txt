@@ -1,0 +1,8 @@
+setup.py
+ytDownloader_cli/__init__.py
+ytDownloader_cli/cli.py
+ytDownloader_cli.egg-info/PKG-INFO
+ytDownloader_cli.egg-info/SOURCES.txt
+ytDownloader_cli.egg-info/dependency_links.txt
+ytDownloader_cli.egg-info/entry_points.txt
+ytDownloader_cli.egg-info/top_level.txt
