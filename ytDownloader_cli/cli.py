@@ -54,7 +54,7 @@ def dlPlaylist(url, onlyAudio = False, folder=""):
 
 def main():
     parser = argparse.ArgumentParser(description="A simple Youtube Downloader")
-    parser.add_argument("url", type=str, help="Paste the link of the YouTube video or playlist")
+    parser.add_argument("url", type=str, nargs="?" ,help="Paste the link of the YouTube video or playlist")
     parser.add_argument("-a", "--audio", action="store_true", help="Download only the audio")
     parser.add_argument("-f", "--folder", type=str, help="Download the video in selected folder")
     args = parser.parse_args()
@@ -62,6 +62,22 @@ def main():
     folder = args.folder
     if not folder:
         folder = "./"
+
+    if not args.url:
+        args.url = input("Paste the link of the YouTube video or playlist: ")
+        onlyAudio = input("Download only the audio? (y/n): ")
+        if onlyAudio == "y":
+            args.audio = True
+        else:
+            args.audio = False
+        
+        folder = input("Download the video in selected folder? (y/n): ")
+        if folder == "y":
+            folder = input("Enter the folder path: ")
+        else:
+            folder = "./"
+        
+        
 
     try: 
         if "list" in args.url:
